@@ -14,6 +14,14 @@ public class Basket {
     }
 
     public double getTotal() {
-        return total;
+        return this.total;
+    }
+
+    public int getCart() {
+        return this.cart.size();
+    }
+
+    public void addItem(Item item) {
+        cart.add(item);
     }
 }

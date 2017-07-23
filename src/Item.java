@@ -14,14 +14,14 @@ public class Item {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     public String getDescription() {
-        return description;
+        return this.description;
     }
 }

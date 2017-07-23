@@ -9,14 +9,27 @@ import org.junit.Test;
 public class BasketTest {
 
     Basket basket;
+    Item item;
 
     @Before
     public void before() {
         basket = new Basket(0.0);
+        item = new Item("dog lead", 13.0, "adjustable");
     }
 
     @Test
     public void hasTotal() {
         assertEquals(0.0, basket.getTotal(), 0.01);
+    }
+
+    @Test
+    public void cartStartsEmpty() {
+        assertEquals(0, basket.getCart());
+    }
+
+    @Test
+    public void addItemToCart() {
+        basket.addItem(item);
+        assertEquals(1, basket.getCart());
     }
 }
