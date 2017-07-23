@@ -32,4 +32,11 @@ public class BasketTest {
         basket.addItem(item);
         assertEquals(1, basket.getCart());
     }
+
+    @Test
+    public void removeItemFromCart() {
+        basket.addItem(item);
+        basket.removeItem(item);
+        assertEquals(0, basket.getCart());
+    }
 }
