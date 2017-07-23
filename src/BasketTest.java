@@ -65,18 +65,15 @@ public class BasketTest {
     }
 
     @Test
-    public void canCalcOccurances() {
+    public void canCalcOccurences() {
         basket.addItem(item1);
         basket.addItem(item1);
-        assertEquals(2, basket.countOccurancesOfSameItemInCart());
+        basket.addItem(item2);
+        basket.addItem(item2);
+        basket.addItem(item2);
+        basket.countOccurencesOfSameItemInCart();
+        assertEquals(2, basket.getQuantityHashItem(item1));
+        assertEquals(3, basket.getQuantityHashItem(item2));
     }
-
-//    @Test
-//    public void canCalcDiscountBuyOneGetOneFree_discountApplies() {
-//        basket.addItem(item1);
-//        basket.addItem(item1);
-//        basket.calcBuyOneGetOneFree();
-//        assertEquals(13.0, basket.getTotal(), 0.01);
-//    }
 
 }
