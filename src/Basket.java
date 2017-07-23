@@ -5,15 +5,15 @@ import java.util.ArrayList;
  */
 public class Basket {
 
-    private double cash;
+    private double total;
     private ArrayList<Item> cart;
 
-    public Basket(double cash) {
-        this.cash = cash;
+    public Basket(double total) {
+        this.total = total;
         this.cart = new ArrayList<Item>();
     }
 
-    public double getCash() {
-        return cash;
+    public double getTotal() {
+        return total;
     }
 }
