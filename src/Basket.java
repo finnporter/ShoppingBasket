@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * Created by Finn on 23/07/2017.
@@ -61,9 +62,31 @@ public class Basket {
                 quantityHash.put(item, 1);
             }
             else { quantityHash.put(item, occurrences+1); }
-            }
-            //return quantityHash;
         }
+    }
+
+    public double calcBuyOneGetOneFree() {
+        double result = 0;
+        Iterator entries = quantityHash.entrySet().iterator();
+        while (entries.hasNext()) {
+            HashMap.Entry entry = (HashMap.Entry) entries.next();
+            Item key = (Item)entry.getKey();
+            Integer value = (Integer)entry.getValue();
+            for (Item item : cart) {
+                if (quantityHash.get(item) % 2 == 0) {
+                    result += item.getPrice() * 0.5;
+                    setTotal(result);
+                }
+                else {
+                    quantityHash.get(item);{
+                        result += item.getPrice() *  0.5;
+                        setTotal(result);
+                    }
+                }
+            }
+        }
+        return this.total;
+    }
 }
 
 

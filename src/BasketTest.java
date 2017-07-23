@@ -76,4 +76,16 @@ public class BasketTest {
         assertEquals(3, basket.getQuantityHashItem(item2));
     }
 
+    @Test
+    public void canCalcBuyOneGetOneFree() {
+        basket.addItem(item1);
+        basket.addItem(item1);
+        basket.addItem(item2);
+        basket.addItem(item2);
+        basket.addItem(item2);
+        basket.countOccurencesOfSameItemInCart();
+        basket.calcBuyOneGetOneFree();
+        assertEquals(35, basket.getTotal(), 0.01);
+    }
+
 }
