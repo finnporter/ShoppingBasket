@@ -9,12 +9,14 @@ import org.junit.Test;
 public class BasketTest {
 
     Basket basket;
-    Item item;
+    Item item1;
+    Item item2;
 
     @Before
     public void before() {
         basket = new Basket(0.0);
-        item = new Item("dog lead", 13.0, "adjustable");
+        item1 = new Item("dog lead", 13.0, "adjustable");
+        item2 = new Item("dog collar", 11.0, "soft");
     }
 
     @Test
@@ -28,15 +30,23 @@ public class BasketTest {
     }
 
     @Test
-    public void addItemToCart() {
-        basket.addItem(item);
+    public void addsItemToCart() {
+        basket.addItem(item1);
         assertEquals(1, basket.getCart());
     }
 
     @Test
-    public void removeItemFromCart() {
-        basket.addItem(item);
-        basket.removeItem(item);
+    public void removesItemFromCart() {
+        basket.addItem(item1);
+        basket.removeItem(item1);
+        assertEquals(0, basket.getCart());
+    }
+
+    @Test
+    public void removeAllItemsFromCart() {
+        basket.addItem(item1);
+        basket.addItem(item2);
+        basket.emptyOutCart();
         assertEquals(0, basket.getCart());
     }
 }

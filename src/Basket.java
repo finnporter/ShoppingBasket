@@ -28,4 +28,8 @@ public class Basket {
     public void removeItem(Item item) {
         cart.remove(item);
     }
+
+    public void emptyOutCart() {
+        cart.clear();
+    }
 }
