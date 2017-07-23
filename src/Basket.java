@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Finn on 23/07/2017.
@@ -45,4 +46,14 @@ public class Basket {
         setTotal(sum);
         return this.total;
     }
+
+    public int countOccurancesOfSameItemInCart() {
+        int occurances = 0;
+        for (Item item : cart) {
+            occurances = Collections.frequency(cart, item);
+        }
+        return occurances;
+    }
+
+
 }

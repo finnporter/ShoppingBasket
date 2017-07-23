@@ -63,4 +63,20 @@ public class BasketTest {
         basket.calcTotal();
         assertEquals(24, basket.getTotal(), 0.01);
     }
+
+    @Test
+    public void canCalcOccurances() {
+        basket.addItem(item1);
+        basket.addItem(item1);
+        assertEquals(2, basket.countOccurancesOfSameItemInCart());
+    }
+
+//    @Test
+//    public void canCalcDiscountBuyOneGetOneFree_discountApplies() {
+//        basket.addItem(item1);
+//        basket.addItem(item1);
+//        basket.calcBuyOneGetOneFree();
+//        assertEquals(13.0, basket.getTotal(), 0.01);
+//    }
+
 }
