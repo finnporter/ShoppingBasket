@@ -21,6 +21,10 @@ public class Basket {
         return this.cart.size();
     }
 
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
     public void addItem(Item item) {
         cart.add(item);
     }
@@ -31,5 +35,14 @@ public class Basket {
 
     public void emptyOutCart() {
         cart.clear();
+    }
+
+    public double calcTotal() {
+        double sum = 0;
+        for (Item item : cart) {
+            sum += item.getPrice();
+        }
+        setTotal(sum);
+        return this.total;
     }
 }

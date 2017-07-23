@@ -30,6 +30,12 @@ public class BasketTest {
     }
 
     @Test
+    public void canSetTotal() {
+        basket.setTotal(10.0);
+        assertEquals(10.0, basket.getTotal(), 0.01);
+    }
+
+    @Test
     public void addsItemToCart() {
         basket.addItem(item1);
         assertEquals(1, basket.getCart());
@@ -48,5 +54,13 @@ public class BasketTest {
         basket.addItem(item2);
         basket.emptyOutCart();
         assertEquals(0, basket.getCart());
+    }
+
+    @Test
+    public void canCalcTotal() {
+        basket.addItem(item1);
+        basket.addItem(item2);
+        basket.calcTotal();
+        assertEquals(24, basket.getTotal(), 0.01);
     }
 }
